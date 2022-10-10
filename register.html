@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -6,11 +7,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-        <title>Sign In - CalorieNinjas</title>
+        <title>Register - Garena Calories</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="CalorieNinjas Sign In">
+        <meta name="description" content="CalorieNinjas Register">
         <meta name="author" content="">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -51,7 +52,7 @@
                         <div class="logo">
                             <a class="navbar-brand" href="index.html">
                                 <img src="images/calorieninjas_logo_small_white.png"/>
-                                <div class="logo-name">CalorieNinjas</div>
+                                <div class="logo-name">Garena Calories</div>
                             </a>
                         </div>          
                     </div><!--//branding-->
@@ -62,12 +63,6 @@
                       </button>
                     <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item nav-button highlight">
-                                <button class="nav-link btn" onclick="location.href = 'api';">API</button>
-                            </li>
-                            <li class="nav-item nav-button highlight">
-                                <button class="nav-link btn" onclick="location.href = 'pricing';">Premium</button>
-                            </li>
                             <li class="nav-item nav-button highlight">
                                 <button id="login-button" class="nav-link btn">Login</button>
                             </li>
@@ -84,23 +79,25 @@
             <div class="container">
                 <section class="form-wrap text-center signin">
                     <div id="doc-header" class="doc-header text-center">
-                        <h1 class="doc-title"><i class="icon arrow_carrot-right_alt"></i> Sign In</h1>
+                        <h1 class="doc-title"><i class="icon icon_profile"></i> Register</h1>
                     </div><!--//doc-header--> 
-                    <div id="signInError" class="alert alert-danger" style="display:none;"></div> 
-                    <input type="button" style="display:none;" class="btn btn-primary" id="resendConfirmationButton" value="Resend Confirmation Email">
-                    <div id="signInSuccess" class="alert alert-success" style="display:none;"></div> 
-                    <form id="signinForm">
+                    <div id="registerError" class="alert alert-danger" style="display:none;"></div>
+                    <div id="registerSuccess" class="alert alert-success" style="display:none;"></div>
+                    <form id="registrationForm">
                         <div class="form-field">
-                            <input type="email" class="form-control" id="emailInputSignin" placeholder="Email" required>
+                            <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" required>
                         </div>
                         <div class="form-field">
-                            <input type="password" class="form-control" id="passwordInputSignin" placeholder="Password" pattern=".*" required>
-                            <a href="forgotpassword">Forgot password?</a>
+                            <p style="font-size:12px;">Password must container at least 8 characters and 1 number.</p>
+                            <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
                         </div>
                         <div class="form-field">
-                            <button class="btn btn-primary" type="submit">Sign In</button>
+                            <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+                        </div>
+                        <div class="form-field">
+                            <button class="btn btn-primary" type="submit">Register</button>
                             <br>
-                            <p>Don't have an account? <a href="register">Sign Up</a></p>
+                            <p>Already have an account? <a href="signin.html">Login</a></p>
                         </div>
                     </form>
                 </section>
@@ -111,28 +108,9 @@
             <div>
                 <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
                 <div class="footer-menu row">
-                    <div class="footer-col col-lg-4">
-                        <h5>About</h5>
-                        <a class="footer-link" href="pricing">Pricing</a>
-                        <a class="footer-link" href="privacy">Privacy Policy</a>
-                        <a class="footer-link" href="tos">Terms of Service</a>
-                        <a class="footer-link" href="contact">Contact Us</a>
-                    </div>
-                    <div class="footer-col col-lg-4">
-                        <h5>Get Started</h5>
-                        <a class="footer-link" href="register">Sign Up</a>
-                        <a class="footer-link" href="signin">Log In</a>
-                        <a class="footer-link" href="api">API Documentation</a>
-                    </div>
-                    <div class="footer-col col-lg-4">
-                        <h5>Connect With Us</h5>
-                        <a class="footer-social btn-floating btn-lg btn-fb" href="https://www.facebook.com/CalorieNinjas-106731677893335"><i class="fab fa-facebook-f"></i></a>
-                        <a class="footer-social btn-floating btn-lg btn-tw" href="https://www.twitter.com/calorieninjas"><i class="fab fa-twitter"></i></a>
-                        <a class="footer-social btn-floating btn-lg btn-ins" href="https://www.instagram.com/calorieninjas"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
                 <div>
-                    <p class="footer-text">© 2020 CalorieNinjas. All rights reserved.</p>
+                    <p class="footer-text">© 2020 ANTN. Tho - Khoa - Minh.</p>
                 </div>
             </div><!--//container-->
         </footer><!--//footer-->

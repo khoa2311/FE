@@ -9,7 +9,7 @@ $(document).ready(function() {
     }
 
     $('#signup-button').click(function() {
-        window.location = 'register';
+        window.location = 'register.html';
     });
 
     CalorieNinjas.authToken.then(function updateAuthMessage(username) {
@@ -143,7 +143,7 @@ $(document).ready(function() {
     }
 
     $('#login-button').click(function(e) {
-        window.location = 'signin';
+        window.location = 'signin.html';
     });
 
     $('#submit').on('click', function(e) {

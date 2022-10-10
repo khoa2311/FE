@@ -1854,7 +1854,7 @@ select {
 .landing-page-bg {
   width: 100%;
   height: 100%;
-  background-image: url(../../images/food_bg2.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
