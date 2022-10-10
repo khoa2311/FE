@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CalorieNinjas - Easy, Free Nutrition Facts and Recipe Search</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate nutrition facts from anything with CalorieNinjas's natural language nutrition tool.">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149694083-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149694083-1');
+    </script>
+
+</head> 
+
+<body>   
+    <div class="home-page page-wrapper">
+        <div class="landing-page-bg">
+            <header class="header" style="background-color:transparent;">
+		        <div class="container">
+		            <nav class="navbar navbar-expand-lg navbar-custom">
+                        <div class="branding">
+                            <div class="logo">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="images/calorieninjas_logo_small_white.png"/>
+                                    <div class="logo-name">CalorieNinjas</div>
+                                </a>
+                            </div>          
+                        </div><!--//branding-->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">   
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                            </span>
+                          </button>
+		                <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+		                    <ul class="navbar-nav ml-auto">
+		                        <li class="nav-item nav-button highlight">
+		                            <button class="nav-link btn" onclick="location.href = 'api';">API</button>
+		                        </li>
+                                <li class="nav-item nav-button highlight">
+                                    <button class="nav-link btn" onclick="location.href = 'pricing';">Premium</button>
+                                </li>
+		                        <li class="nav-item nav-button highlight">
+		                            <button id="login-button" class="nav-link btn">Login</button>
+                                </li>
+                                <li class="nav-item nav-button highlight">
+                                    <button id="signup-button" class="nav-link btn">Sign Up</button>
+                                </li>
+		                    </ul>
+		                </div>
+		            </nav>
+		        </div><!--//container-->
+		    </header><!--//header-->
+
+            <div class="center text-center">
+                <div class="container landing-page-bg-panel">
+                    <div class="branding">
+                        <h1 class="main-line">Nutrition Facts and Recipes Now</h1>
+                    </div><!--//branding-->
+                    <div>
+                        <h2 class="tagline">Free nutrition and recipe data for <strong><strong>100,000+</strong></strong> foods and beverages</h2>
+                    </div><!--//tagline-->
+                    <div>
+                        <ul class="nav nav-pills mb-2 main-nav-selection" id="pills-tab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link main-nav nav-item-left active" id="tab-one" data-toggle="pill" href="index.html#one" role="tab"aria-selected="true">Text Input</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link main-nav nav-item-center relative" id="tab-two" data-toggle="pill" href="index.html#two" role="tab" aria-selected="false">Image Text</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link main-nav nav-item-right relative" id="tab-three" data-toggle="pill" href="index.html#three" role="tab" aria-selected="false"><div class="new-box"></div>Recipes</a>
+                          </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div aria-labelledby="tab-one" class="text-center tab-pane fade show active" role="tabpanel" id="one">
+                            <div class="input-group demo-input">
+                              <input type="text" id="demo-input" class="form-control query-input" placeholder="Enter some text to calculate nutrition information." value="Last night we ordered a 14oz prime rib and mashed potatoes.">
+                            </div>
+                            <div class="demo" id="text-demo" style="display:none;">
+                                <div style="margin:20px;">
+                                    <h3>Nutrition Results</h3>
+                                </div>
+                                <table class="table table-striped">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Serving Size</th>
+                                      <th scope="col">Calories</th>
+                                      <th scope="col">Total Fat</th>
+                                      <th scope="col">Saturated Fat</th>
+                                      <th scope="col">Cholesterol</th>
+                                      <th scope="col">Sodium</th>
+                                      <th scope="col">Carbohydrates</th>
+                                      <th scope="col">Fiber</th>
+                                      <th scope="col">Sugar</th>
+                                      <th scope="col">Protein</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="result">
+                                  </tbody>
+                                </table>
+                            </div>
+                            <button type="button" id="submit" class="btn-lg btn-primary submit-button button-huge"><i id="text-loader" class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
+                        </div>
+
+                        <div aria-labelledby="tab-two" class="tab-pane fade" id="two" role="tabpanel">
+                            <div>
+                                <div class="image-upload">
+                                    <form>
+                                      <div class="custom-file file">
+                                        <input type="file" class="custom-file-input" name="file" id="file" accept="image/png,image/jpeg">
+                                        <label class="custom-file-label image-input" for="file">Upload image containing food text (e.g. recipe, menu)</label>
+                                      </div>
+                                    </form>
+                                </div>
+                                <div id="image-demo-container" class="demo" style="display: none;">
+                                    <div class="original-image-div">
+                                        <h3>Original Image</h3>
+                                        <div id="original-div" style="display: none;">
+                                            <img id="image" class="img-main">
+                                        </div>
+                                    </div>
+                                    <div id="image-demo" style="display:none;">
+                                        <h3>Nutrition Results</h3>
+                                        <table class="table table-striped">
+                                          <thead class="thead-dark">
+                                            <tr>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">Serving Size</th>
+                                              <th scope="col">Calories</th>
+                                              <th scope="col">Total Fat</th>
+                                              <th scope="col">Saturated Fat</th>
+                                              <th scope="col">Cholesterol</th>
+                                              <th scope="col">Sodium</th>
+                                              <th scope="col">Carbohydrates</th>
+                                              <th scope="col">Fiber</th>
+                                              <th scope="col">Sugar</th>
+                                              <th scope="col">Protein</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody id="image-result">
+                                          </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button type="button" id="submit-image" class="btn-lg btn-primary submit-button button-huge"><i id="image-loader" class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
+                            </div>
+                        </div>
+
+                        <div aria-labelledby="tab-three" class="text-center tab-pane fade show" role="tabpanel" id="three">
+                            <div class="input-group demo-input">
+                              <input type="text" id="demo-input-recipe" class="form-control query-input" placeholder="Enter a dish." value="Mushroom risotto">
+                            </div>
+                            <div class="demo" id="recipe-demo" style="display:none;">
+                                <div style="margin:20px;">
+                                    <h3 id="result-recipe-title"></h3>
+                                </div>
+                                <div id="result-recipe">
+                                </div>
+                            </div>
+                            <button type="button" id="submit-recipe" class="btn-lg btn-primary submit-button button-huge"><i id="text-loader-recipe" class="fa fa-spinner fa-spin"></i>Get Recipes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="main-section cards-section text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="images/textdemo.jpg" class="feature-img" alt="text demo">
+                    </div>
+                    <div class="col-lg-6 feature-col">
+                        <div class="inner-feature-col">
+                            <h2>Type any text</h2>
+                            <p>No need to format anything. Our software can read anything you type in and extract the right nutrition information.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row reverse-small">
+                    <div class="col-lg-6 feature-col">
+                        <div class="inner-feature-col">
+                            <h2>Or upload a menu</h2>
+                            <p>The image text tool automatically detects food words and calculates nutrition information. Great for recipes, and restaurant menus!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="images/imagedemo.jpg" class="feature-img" alt="image demo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="images/recipe.jpeg" class="feature-img" alt="text demo">
+                    </div>
+                    <div class="col-lg-6 feature-col">
+                        <div class="inner-feature-col">
+                            <h2>Search over 100,000 recipes</h2>
+                            <p>From snacks to desserts, appetizers to entrees, find recipes from cuisines both local and foreign.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing-page-bg2 main-section cards-section text-center" style="background-color: #f8f8f8; color:#fff">
+            <div class="container">
+                <div class="row">
+                    <div class="sub-item col-lg-6">
+                        <div class="icon-holder">
+                            <i class="icon fa fa-chart-pie"></i>
+                        </div><!--//icon-holder-->
+                        <p class="sub-headline">Custom Portions</p>
+                        <p class="sub-text">Have specific portion sizes in mind? No Problem! Our algorithms automatically adjusts nutrition results to any portion size you specify.</p>
+                    </div>
+                    <div class="sub-item col-lg-6">
+                        <div class="icon-holder">
+                            <i class="icon fa fa-globe"></i>
+                        </div><!--//icon-holder-->
+                        <p class="sub-headline">Global Nutrition Data</p>
+                        <p class="sub-text">Our nutrition database contains foods and beverages from all regions of the world!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-item col-lg-6">
+                        <div class="icon-holder">
+                            <i class="icon fa fa-utensils"></i>
+                        </div><!--//icon-holder-->
+                        <p class="sub-headline">Branded items</p>
+                        <p class="sub-text">Our database contains not only food ingredients but also complete dishes and items from your favorite restaurant chain or food brand!</p>
+                    </div>
+                    <div class="sub-item col-lg-6">
+                        <div class="icon-holder">
+                            <i class="icon fa fa-spinner"></i>
+                        </div><!--//icon-holder-->
+                        <p class="sub-headline">Consantly Updating</p>
+                        <p class="sub-text">We're constantly adding new items to our database and improving our algorithms so you'll always have the best information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-section cards-section text-center">
+            <div class="container">
+                <div style="margin-bottom: 40px;">
+                    <h2>Build Amazing Apps</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="main-item">
+                            <p class="main-headline">500,000+</p>
+                            <h3>Queries Per Month</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="main-item">
+                            <p class="main-headline">100+</p>
+                            <h3>Apps Supported</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro">
+                    <br>
+                    <p class="home-desc">We've distilled our core text to nutrition technology into a simple yet powerful natural language API that many devices and platforms. From fitness coaching to food journals, let our API do the heavy lifting for you.</p>
+                    <p class="home-desc">Most of our developers successfully use our API within <strong>10 minutes</strong> of signing up - a figure we're truly proud of. With our easy integration, you can focus on what's truly important: building out your application.</p>
+                </div>
+                <div>
+                    <button class="btn btn-primary button-huge" onclick="window.location.href = 'register'">Get a Free API Key</button>
+                </div>
+                <div>
+                    <button class="btn button-huge-hollow" onclick="window.location.href = 'api'">Or read our API documentation</button>
+                </div>
+            </div>
+        </section>
+    </div><!--//page-wrapper-->
+    
+    <footer class="footer text-center">
+        <div>
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <div class="footer-menu row">
+                <div class="footer-col col-lg-4">
+                    <h5>About</h5>
+                    <a class="footer-link" href="pricing">Pricing</a>
+                    <a class="footer-link" href="privacy">Privacy Policy</a>
+                    <a class="footer-link" href="tos">Terms of Service</a>
+                    <a class="footer-link" href="contact">Contact Us</a>
+                </div>
+                <div class="footer-col col-lg-4">
+                    <h5>Get Started</h5>
+                    <a class="footer-link" href="register">Sign Up</a>
+                    <a class="footer-link" href="signin">Log In</a>
+                    <a class="footer-link" href="api">API Documentation</a>
+                </div>
+                <div class="footer-col col-lg-4">
+                    <h5>Connect With Us</h5>
+                    <a class="footer-social btn-floating btn-lg btn-fb" href="https://www.facebook.com/CalorieNinjas-106731677893335"><i class="fab fa-facebook-f"></i></a>
+                    <a class="footer-social btn-floating btn-lg btn-tw" href="https://www.twitter.com/calorieninjas"><i class="fab fa-twitter"></i></a>
+                    <a class="footer-social btn-floating btn-lg btn-ins" href="https://www.instagram.com/calorieninjas"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-text">© 2020 CalorieNinjas. All rights reserved.</p>
+            </div>
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
+    <script src="assets/js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

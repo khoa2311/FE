@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Pricing - CalorieNinjas</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CalorieNinjas Pricing">
+    <meta name="author" content="">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149694083-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149694083-1');
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="branding">
+                    <div class="logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/calorieninjas_logo_small_white.png"/>
+                            <div class="logo-name">CalorieNinjas</div>
+                        </a>
+                    </div>          
+                </div><!--//branding-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">   
+                        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </span>
+                  </button>
+                <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item nav-button highlight">
+                            <button class="nav-link btn" onclick="location.href = 'api';">API</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button class="nav-link btn" onclick="location.href = 'pricing';">Premium</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button id="login-button" class="nav-link btn">Login</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button id="signup-button" class="nav-link btn">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div><!--//container-->
+    </header><!--//header-->
+
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title">Pricing Plans</h1>
+                <h6>Choose the best plan for your needs. You can change plans at any time in your account profile.</h6>
+            </div><!--//doc-header-->     
+            <section class="cards-section text-center">
+                <div class="container">
+                    <div id="cards-wrapper" class="cards-wrapper row">
+                        <div class="item col-lg-3 item-pricing">
+                            <div class="item-inner pricing-inner text-left white-bg">
+                                <div class="text-center">
+                                    <h3 class="title">Free</h3>
+                                    <div class="price">$0<span class="price-sub">/month</span></div>
+                                    <br>
+                                    <p>No credit card required</p>
+                                </div>
+                                <hr>
+                                <p class="price-sub"><strong><i class="fas fa-check-circle primary-color"></i> Unlimited</strong> users</p>
+                                <p class="price-sub"><strong><i class="fas fa-times-circle red-color"></i> No</strong> support</p>
+                                <p class="price-sub"><strong><i class="fas fa-times-circle red-color"></i> No</strong> commercial use</p>
+                                <hr>
+                                <p class="price-sub"><strong>10,000</strong> API calls/month</p>
+                                <a class="link" href="register"><span></span></a>
+                            </div><!--//item-inner-->
+                        </div><!--//item-->
+                        <div class="item col-lg-3 item-pricing">
+                            <div class="item-inner pricing-inner text-left white-bg">
+                                <div class="text-center">
+                                    <h3 class="title">Novice</h3>
+                                    <div class="price">$8<span class="price-sub">/month</span></div>
+                                    <br>
+                                    <p>Launch your first project</p>
+                                </div>
+                                <hr>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Unlimited</strong> users</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Standard</strong> support</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Yes</strong> commercial use</p>
+                                <hr>
+                                <p class="price-sub"><strong>100,000</strong> API calls/month</p>
+                                <a class="link" href="register"><span></span></a>
+                            </div><!--//item-inner-->
+                        </div><!--//item-->
+                        <div class="item col-lg-3 item-pricing">
+                            <div class="most-popular">
+                                <p><strong>Most Popular</strong></p>
+                            </div>
+                            <div class="item-inner pricing-inner text-left pricing-recommended lightblue-bg">
+                                <div class="text-center">
+                                    <h3 class="title">Startup</h3>
+                                    <div class="price"><span class="price-limit">$</span>20<span class="price-sub">/month</span></div>
+                                    <br>
+                                    <p>Scale your appication</p>
+                                </div>
+                                <hr>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Unlimited</strong> users</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Standard</strong> support</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Yes</strong> commercial use</p>
+                                <hr>
+                                <p class="price-sub"><strong>500,000</strong> API calls/month</p>
+                                <a class="link" href="register"><span></span></a>
+                            </div><!--//item-inner-->
+                        </div><!--//item-->
+                        <div class="item col-lg-3 item-pricing">
+                            <div class="item-inner pricing-inner text-left white-bg">
+                                <div class="text-center">
+                                    <h3 class="title">Business</h3>
+                                    <div class="price">$49<span class="price-sub">/month</span></div>
+                                    <br>
+                                    <p>Deliver quality data</p>
+                                </div>
+                                <hr>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Unlimited</strong> users</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Premium </strong> support</p>
+                                <p class="price-sub"><i class="fas fa-check-circle primary-color"></i><strong> Yes</strong> commercial use</p>
+                                <hr>
+                                <p class="price-sub"><strong>2,000,000</strong> API calls/month</p>
+                                <a class="link" href="register"><span></span></a>
+                            </div><!--//item-inner-->
+                        </div><!--//item-->
+                        <div class="intro">
+                            <h6>If the above plans do not meet your needs, please <a class="link" href="contact">contact us</a> for a custom pricing plan.</h6>
+                        </div>
+                    </div><!--//cards-->
+                    
+                </div><!--//container-->
+            </section><!--//cards-section-->  
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+            <div>
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <div class="footer-menu row">
+                    <div class="footer-col col-lg-4">
+                        <h5>About</h5>
+                        <a class="footer-link" href="pricing">Pricing</a>
+                        <a class="footer-link" href="privacy">Privacy Policy</a>
+                        <a class="footer-link" href="tos">Terms of Service</a>
+                        <a class="footer-link" href="contact">Contact Us</a>
+                    </div>
+                    <div class="footer-col col-lg-4">
+                        <h5>Get Started</h5>
+                        <a class="footer-link" href="register">Sign Up</a>
+                        <a class="footer-link" href="signin">Log In</a>
+                        <a class="footer-link" href="api">API Documentation</a>
+                    </div>
+                    <div class="footer-col col-lg-4">
+                        <h5>Connect With Us</h5>
+                        <a class="footer-social btn-floating btn-lg btn-fb" href="https://www.facebook.com/CalorieNinjas-106731677893335"><i class="fab fa-facebook-f"></i></a>
+                        <a class="footer-social btn-floating btn-lg btn-tw" href="https://www.twitter.com/calorieninjas"><i class="fab fa-twitter"></i></a>
+                        <a class="footer-social btn-floating btn-lg btn-ins" href="https://www.instagram.com/calorieninjas"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="footer-text">© 2020 CalorieNinjas. All rights reserved.</p>
+                </div>
+            </div><!--//container-->
+        </footer><!--//footer-->
+
+
+    <script src="assets/js/vendor/jquery-3.1.0.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>

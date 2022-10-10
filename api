@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>API Documentation - CalorieNinjas</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CalorieNinjas natural language nutrition API documentation">
+    <meta name="author" content="">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149694083-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149694083-1');
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="branding">
+                    <div class="logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/calorieninjas_logo_small_white.png"/>
+                            <div class="logo-name">CalorieNinjas</div>
+                        </a>
+                    </div>          
+                </div><!--//branding-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">   
+                        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </span>
+                  </button>
+                <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item nav-button highlight">
+                            <button class="nav-link btn" onclick="location.href = 'api';">API</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button class="nav-link btn" onclick="location.href = 'pricing';">Premium</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button id="login-button" class="nav-link btn">Login</button>
+                        </li>
+                        <li class="nav-item nav-button highlight">
+                            <button id="signup-button" class="nav-link btn">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div><!--//container-->
+    </header><!--//header-->
+
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title"><i class="icon icon_documents_alt"></i> API Documentation</h1>
+            </div><!--//doc-header-->
+            <div class="doc-body row">
+                <div class="doc-content col-md-10 col-12 order-1">
+                    <div class="content-inner">
+                        <div class="alert alert-info">
+                            <p style="margin-bottom:0;">To use the CalorieNinjas API, you need to <a href="register">sign up</a> for a free account and get an API key.</p>
+                        </div>
+                        <section id="nutrition-section" class="nutrition-section doc-section">
+                            <h2 class="section-title">/v1/nutrition</h2>
+                            <div class="section-block">
+                            	<h3><code>HTTP GET</code></h3>
+                                <p>Get a detailed list of nutrition information for each item from an input text query.
+                                </p>
+                                <div class="api-block">
+	                                <h5>Parameters</h5>
+	                                <p><strong><code>query</code></strong> (required) - a string containing food or drink items. If you wish to calculate a specific quantity, you may prefix a quantity before an item. For example, <code>3 tomatoes</code> or <code>1lb</code> beef brisket. If no quantity is specified, the default quantity is <strong>100 grams</strong>. Queries cannot exceed <strong>1500 characters</strong>.</p> 
+	                            </div>
+
+                                <div class="api-block">
+                                    <h5>Headers</h5>
+                                    <p><strong><code>X-Api-Key</code></strong> (required) - API Key associated with your account.
+                                    </p> 
+                                </div>
+
+                                <div id="nutritiondemo">
+    	                            <div class="api-block">
+                                        <div>
+    	                                   <h5 style="display:inline;">Sample Request URL</h5><p class="api-demo">Live Demo!</p>
+                                        </div>
+    	                                <code>https://api.calorieninjas.com/v1/nutrition?query=<input id="sample-api-request" class="api-example-query" value="10oz onion and a tomato"></code>&nbsp&nbsp&nbsp
+                                        <button id="submitSampleAPIRequest" class="btn btn-sm btn-primary">Send Request</button>
+    	                            </div>
+    	                            <div class="api-block code-block">
+    	                                <h5>Sample Response</h5>
+    	                                <pre><code id="sample-response" class="language-java">{
+  "items": [
+    {
+      "sugar_g": 13.3,
+      "fiber_g": 4,
+      "serving_size_g": 283.495,
+      "sodium_mg": 8,
+      "name": "onion",
+      "potassium_mg": 99,
+      "fat_saturated_g": 0.1,
+      "fat_total_g": 0.5,
+      "calories": 126.7,
+      "cholesterol_mg": 0,
+      "protein_g": 3.9,
+      "carbohydrates_total_g": 28.6
+    },
+    {
+      "sugar_g": 2.6,
+      "fiber_g": 1.2,
+      "serving_size_g": 100,
+      "sodium_mg": 4,
+      "name": "tomato",
+      "potassium_mg": 23,
+      "fat_saturated_g": 0,
+      "fat_total_g": 0.2,
+      "calories": 18.2,
+      "cholesterol_mg": 0,
+      "protein_g": 0.9,
+      "carbohydrates_total_g": 3.9
+    }
+  ]
+}</code></pre>
+    	                            </div>
+                                </div>
+
+	                            <div id="nutritioncodeexample" class="api-block">
+	                                <h5>Code Example</h5>
+	                                <ul class="nav nav-pills">
+						                <li class="active">
+						                    <a href="api#1b" data-toggle="tab">Python</a>
+						                </li>
+						                <li><a href="api#2b" data-toggle="tab">Javascript</a>
+						                </li>
+                                        <li><a href="api#3b" data-toggle="tab">Nodejs</a>
+                                        </li>
+						                <li><a href="api#4b" data-toggle="tab">Java</a>
+						                </li>
+                                        <li><a href="api#5b" data-toggle="tab">Swift</a>
+                                        </li>
+                                        <li><a href="api#6b" data-toggle="tab">Objective-C</a>
+                                        </li>
+						            </ul>
+						        </div>
+					            <div class="tab-content clearfix">
+					                <div class="tab-pane active" id="1b">
+				                        <div class="code-block">
+		                                    <pre><code class="language-python">import requests
+
+api_url = 'https://api.calorieninjas.com/v1/nutrition?query='
+query = '3lb carrots and a chicken sandwich'
+response = requests.get(api_url + query, headers={'X-Api-Key': 'YOUR_API_KEY'})
+if response.status_code == requests.codes.ok:
+    print(response.text)
+else:
+    print("Error:", response.status_code, response.text)</code></pre>
+		                                </div><!--//code-block-->
+					                </div>
+					                <div class="tab-pane" id="2b">
+					                    <div class="code-block">
+		                                    <pre><code class="language-javascript">var query = '3lb carrots and a chicken sandwich'
+$.ajax({
+    method: 'GET',
+    url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
+    headers: { 'X-Api-Key': 'YOUR_API_KEY'},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+});</code></pre>
+		                                </div><!--//code-block-->
+					                </div>
+					                <div class="tab-pane" id="3b">
+					                    <div class="code-block">
+		                                    <pre><code class="language-javascript">const request = require('request');
+var query = '3lb carrots and a chicken sandwich';
+request.get({
+  url: 'https://api.calorieninjas.com/v1/nutrition?query='+query,
+  headers: {
+    'X-Api-Key': 'YOUR_API_KEY'
+  },
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  else console.log(body)
+});</code></pre>
+		                                </div><!--//code-block-->
+					                </div>
+                                    <div class="tab-pane" id="4b">
+                                        <div class="code-block">
+                                            <pre><code class="language-java">String query = '3lb carrots and a chicken sandwich';
+Response response = Request.Get("https://api.calorieninjas.com/v1/nutrition?query="+query)
+.addHeader("X-Api-Key", "YOUR_API_KEY")
+.execute();</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="5b">
+                                        <div class="code-block">
+                                            <pre><code class="language-javascript">let query = "3lb carrots and a chicken sandwich".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+let url = URL(string: "https://api.calorieninjas.com/v1/nutrition?query="+query!)!
+var request = URLRequest(url: url)
+request.setValue("YOUR_API_KEY", forHTTPHeaderField: "X-Api-Key")
+let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+    guard let data = data else { return }
+    print(String(data: data, encoding: .utf8)!)
+}
+task.resume()</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="6b">
+                                        <div class="code-block">
+                                            <pre><code class="language-python">NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+NSString *query = @"https://api.calorieninjas.com/v1/nutrition?query=3lb carrots and a chicken sandwich";
+NSString* encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+[request setHTTPMethod:@"GET"];
+[request setURL:[NSURL URLWithString:encodedQuery]];
+[request setValue:@"YOUR_API_KEY" forHTTPHeaderField:@"X-Api-Key"];
+NSError *error = nil;
+NSHTTPURLResponse *responseCode = nil;
+
+NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+NSLog([[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding]);</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6>If your programming language is not listed in the Code Example above, you can still make API calls by using a HTTP request library written in your programming language and following the above documentation.</h6>
+                                </div>
+                            </div>
+                        </section><!--//doc-section-->
+
+                        <section id="imagetextnutrition-section" class="nutrition-section doc-section">
+                            <h2 class="section-title">/v1/imagetextnutrition</h2>
+                            <div class="section-block">
+                                <h3><code>HTTP POST</code></h3>
+                                <p>Get a detailed list of nutrition information scanned from an image containing food/beverage text. Example use cases include menus, recipes, and food journal entries.
+                                </p>
+                                
+                                <div class="api-block">
+                                    <h5>Headers</h5>
+                                    <p><strong><code>X-Api-Key</code></strong> (required) - API Key associated with your account.
+                                    </p> 
+                                </div>
+
+                                <div id="imagetextnutritiondemo">
+                                    <div class="api-block">
+                                        <div>
+                                            <h5 style="display:inline;">Sample Request URL</h5>
+                                            <p class="api-demo">Live Demo!</p>
+                                        </div>
+                                        <div>
+                                            <code>https://calorieninjas.com/v1/imagetextnutrition</code>
+                                        </div>
+                                        <form>
+                                          <div class="custom-file file">
+                                            <input type="file" class="custom-file-input" name="api-file" id="file" accept="image/png,image/jpeg">
+                                            <label class="custom-file-label image-input-api" for="api-file">Upload Image</label>
+                                          </div>
+                                        </form>
+                                        <div id="original-div" style="display: none;">
+                                            <img id="image" class="img-api-main">
+                                        </div>
+                                        <button id="submitImageAPIRequest" class="btn btn-sm btn-primary" style="margin:10px 0;">Send Request</button>
+                                    </div>
+                                    <div>
+                                        <h5>Sample Response</h5>
+                                        <pre><code id="image-sample-response" class="language-java"></code></pre>
+                                    </div>
+                                </div>
+
+                                <div id="imagetextnutritioncodeexample" class="api-block">
+                                    <h5>Code Example</h5>
+                                    <ul class="nav nav-pills">
+                                        <li class="active">
+                                            <a href="api#1c" data-toggle="tab">Python</a>
+                                        </li>
+                                        <li>
+                                            <a href="api#2c" data-toggle="tab">Javascript</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="1c">
+                                        <div class="code-block">
+                                            <pre><code class="language-python">import requests
+
+api_url = 'https://api.calorieninjas.com/v1/imagetextnutrition'
+image_file_descriptor = open('yourimage.jpeg', 'rb')
+files = {'media': image_file_descriptor}
+r = requests.post(api_url, files=files)
+print r.json()</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="2c">
+                                        <div class="code-block">
+                                            <pre><code class="language-javascript">var formData = new FormData();
+formData.append('file', $('#imagefile')[0].files[0]);
+$.ajax({
+    method: 'POST',
+    url: 'https://api.calorieninjas.com/v1/imagetextnutrition',
+    data: formData,
+    enctype: 'multipart/form-data',
+    processData: false,
+    contentType: false, 
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR, textStatus, errorThrown) {
+        alert(jqXHR.responseText);
+    }
+});</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6>If your programming language is not listed in the Code Example above, you can still make API calls by using a HTTP request library written in your programming language and following the above documentation.</h6>
+                                </div>
+                            </div>
+                        </section><!--//doc-section-->
+
+                        <section id="recipe-section" class="nutrition-section doc-section">
+                            <h2 class="section-title">/v1/recipe</h2>
+                            <div class="section-block">
+                                <h3><code>HTTP GET</code></h3>
+                                <p>Get a list of up to <strong>10</strong> recipes matching the search query.</p>
+                                </p>
+                                <div class="api-block">
+                                    <h5>Parameters</h5>
+                                    <p><strong><code>query</code></strong> (required) - a string containing a dish name. Partial match is supported (e.g., <code>risotto</code> will match <code>mushroom risotto</code>).</p> 
+                                </div>
+
+                                <div class="api-block">
+                                    <h5>Headers</h5>
+                                    <p><strong><code>X-Api-Key</code></strong> (required) - API Key associated with your account.
+                                    </p> 
+                                </div>
+
+                                <div id="recipedemo">
+                                    <div class="api-block">
+                                        <div>
+                                           <h5 style="display:inline;">Sample Request URL</h5><p class="api-demo">Live Demo!</p>
+                                        </div>
+                                        <code>https://api.calorieninjas.com/v1/recipe?query=<input id="sample-recipe-api-request" class="api-example-query" value="mushroom risotto"></code>&nbsp&nbsp&nbsp
+                                        <button id="submitSampleRecipeAPIRequest" class="btn btn-sm btn-primary">Send Request</button>
+                                    </div>
+                                    <div class="api-block code-block">
+                                        <h5>Sample Response</h5>
+                                        <pre><code id="sample-response-recipe" class="language-java">[
+  {
+    "title": "Champagne Mushroom Risotto",
+    "ingredients": "3 tb Butter or margarine|1 c Converted rice|2/3 c Onion; chopped|1 3/4 c Water|3/4 c Champagne or dry white wine|1 cn Cream of mushroom soup|1/4 ts Fresh ground pepper|1/8 ts Ground nutmeg|1/8 ts Ground red pepper(optional)|1 c Red bell pepper; julienne|Fresh parsley; finely chop|Parmesan cheese (optional)",
+    "servings": "6 Servings",
+    "instructions": "Melt butter in medium saucepan. Add rice and onion. Cook over medium heat, stirring frequently, 3-4 minutes or until onion is tender. Add water and champagne. Bring to a boil. Reduce heat, cover and simmer 20 minutes. Stir in cream of mushroom soup, pepper, nutmeg, and, if desired, ground red pepper. Cook and stir 5 minutes, or until creamy and heated through. Stir in red bell pepper and parsley. Sprinkle with cheese, if desired."
+  },
+  {
+    "title": "Red Wine and Mushroom Risotto",
+    "ingredients": "1 oz Porcini mushrooms; dried|2 c Boiling water|1 1/2 lb Mushrooms; cremini or white|6 tb Unsalted butter|5 1/2 c Chicken broth|6 oz Pancetta; 1/4 inch thick|1 c Onion; chopped fine|1 tb Fresh rosemary; chopped fine|1 tb Fresh sage; chopped fine|3 c Arborio rice|2 c Dry red wine; * see note|3 tb Fresh parsley; chopped fine|1 c Parmesan cheese; freshly|Grated|Garnishes|Parmesan curls|Fresh rosemary sprigs",
+    "servings": "6 Servings",
+    "instructions": "In a small bowl, soak porcini in boiling water 30 minutes. Pour soaking liq through a fine sieve lined with a dampened paper towel or coffee filter int bowl and reserve. Wash porcini under cold water to remove any grit and pat Chop porcini fine. Chop fine 1/4 pound cremini or white mushrooms (about 1-1/2 cuos) and reser Depending on size, halve and/or quarter remaining 1-1/4 pounds cremini or w mushrooms, and in a large heavy skillet cook in 4 tablespoons butter with s and pepper to taste over moderate heat, stirring, until tender, 5 to 10 min Remove skillet from heat and reserve mushrooms in skillet. (They will be re just before serving.) On a large sauce pan heat broth and keep at a bare simmer. In a 5- to 6-quart heavy saucepan, cook pancetta over moderate heat, stirri minutes. Add reserved finely chopped cremini or white mushrooms, remaining tablespoons butter, onion, rosemary, sage, and salt and pepper to taste and stirring until onion is softened. Stir in rice and cook, stirring, until co well with fat, about 1 minute. Add 1 cuop wine and cook, stirring constantl until absorbed. Add remaining cup wine and cook, stirring constantly, until absorbed. Add 1 cup simmering broth and cook, stirring constantly, until absorbed. Co cooking and adding broth, 1/2 cup at a time, stirring constantly and lettin each addition be absorbed before adding next, until rice is tender and creamy-looking but still al dente, 20 to 25 minutes. About half way through cooking, add reserved porcini soaking liquid and cho porcini, stirring constantly until liquid is absorbed, and continue cooking adding broth in same manner. During last few minutes of cooking, reheat reserved cremini or white mushro skillet over moderate heat, stirring, until hot, and stir in parsley and sa pepper to taste. Stir grated Parmesan and salt and pepper to taste into ris Serve risotto immediately, topped with cremini or white mushrooms and garni with Parmesan curls and rosemary sprigs. Serves 6."
+  }
+]</code></pre>
+                                    </div>
+                                </div>
+
+                                <div id="recipecodeexample" class="api-block">
+                                    <h5>Code Example</h5>
+                                    <ul class="nav nav-pills">
+                                        <li class="active">
+                                            <a href="api#b1" data-toggle="tab">Python</a>
+                                        </li>
+                                        <li><a href="api#b2" data-toggle="tab">Javascript</a>
+                                        </li>
+                                        <li><a href="api#b3" data-toggle="tab">Nodejs</a>
+                                        </li>
+                                        <li><a href="api#b4" data-toggle="tab">Java</a>
+                                        </li>
+                                        <li><a href="api#b5" data-toggle="tab">Swift</a>
+                                        </li>
+                                        <li><a href="api#b6" data-toggle="tab">Objective-C</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="b1">
+                                        <div class="code-block">
+                                            <pre><code class="language-python">import requests
+
+api_url = 'https://api.calorieninjas.com/v1/recipe?query='
+query = 'mushroom risotto'
+response = requests.get(api_url + query, headers={'X-Api-Key': 'YOUR_API_KEY'})
+if response.status_code == requests.codes.ok:
+    print(response.text)
+else:
+    print("Error:", response.status_code, response.text)</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="b2">
+                                        <div class="code-block">
+                                            <pre><code class="language-javascript">var query = 'mushroom risotto'
+$.ajax({
+    method: 'GET',
+    url: 'https://api.calorieninjas.com/v1/recipe?query=' + query,
+    headers: { 'X-Api-Key': 'YOUR_API_KEY'},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+});</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="b3">
+                                        <div class="code-block">
+                                            <pre><code class="language-javascript">const request = require('request');
+var query = 'mushroom risotto';
+request.get({
+  url: 'https://api.calorieninjas.com/v1/recipe?query='+query,
+  headers: {
+    'X-Api-Key': 'YOUR_API_KEY'
+  },
+}, function(error, response, body) {
+  if(error) return console.error('Request failed:', error);
+  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+  else console.log(body)
+});</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="b4">
+                                        <div class="code-block">
+                                            <pre><code class="language-java">String query = 'mushroom risotto';
+Response response = Request.Get("https://api.calorieninjas.com/v1/recipe?query="+query)
+.addHeader("X-Api-Key", "YOUR_API_KEY")
+.execute();</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="b5">
+                                        <div class="code-block">
+                                            <pre><code class="language-javascript">let query = "mushroom risotto".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+let url = URL(string: "https://api.calorieninjas.com/v1/recipe?query="+query!)!
+var request = URLRequest(url: url)
+request.setValue("YOUR_API_KEY", forHTTPHeaderField: "X-Api-Key")
+let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+    guard let data = data else { return }
+    print(String(data: data, encoding: .utf8)!)
+}
+task.resume()</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                    <div class="tab-pane" id="b6">
+                                        <div class="code-block">
+                                            <pre><code class="language-python">NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+NSString *query = @"https://api.calorieninjas.com/v1/recipe?query=mushroom risotto";
+NSString* encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+[request setHTTPMethod:@"GET"];
+[request setURL:[NSURL URLWithString:encodedQuery]];
+[request setValue:@"YOUR_API_KEY" forHTTPHeaderField:@"X-Api-Key"];
+NSError *error = nil;
+NSHTTPURLResponse *responseCode = nil;
+
+NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+NSLog([[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding]);</code></pre>
+                                        </div><!--//code-block-->
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6>If your programming language is not listed in the Code Example above, you can still make API calls by using a HTTP request library written in your programming language and following the above documentation.</h6>
+                                </div>
+                            </div>
+                        </section><!--//doc-section-->
+                    </div><!--//content-inner-->
+                </div><!--//doc-content-->
+                <div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex">
+                    <div id="doc-nav" class="doc-nav">
+                        <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                            <a class="nav-link scrollto" href="api#nutrition-section">v1/nutrition</a>
+                            <nav class="doc-sub-menu nav flex-column">
+                                <a class="nav-link scrollto" href="api#nutritiondemo">Live Demo</a>
+                                <a class="nav-link scrollto" href="api#nutritioncodeexample">Code Examples</a>
+                            </nav><!--//nav-->
+                            <a class="nav-link scrollto" href="api#imagetextnutrition-section">v1/imagetextnutrition</a>
+                            <nav class="doc-sub-menu nav flex-column">
+                                <a class="nav-link scrollto" href="api#imagetextnutritiondemo">Live Demo</a>
+                                <a class="nav-link scrollto" href="api#imagetextnutritioncodeexample">Code Examples</a>
+                            </nav><!--//nav-->
+                            <a class="nav-link scrollto" href="api#recipe-section">v1/recipe</a>
+                            <nav class="doc-sub-menu nav flex-column">
+                                <a class="nav-link scrollto" href="api#recipedemo">Live Demo</a>
+                                <a class="nav-link scrollto" href="api#recipecodeexample">Code Examples</a>
+                            </nav><!--//nav-->
+                        </nav><!--//doc-menu-->
+                    </div>
+                </div><!--//doc-sidebar-->
+            </div><!--//doc-body-->        
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <div>
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <div class="footer-menu row">
+                <div class="footer-col col-lg-4">
+                    <h5>About</h5>
+                    <a class="footer-link" href="pricing">Pricing</a>
+                    <a class="footer-link" href="privacy">Privacy Policy</a>
+                    <a class="footer-link" href="tos">Terms of Service</a>
+                    <a class="footer-link" href="contact">Contact Us</a>
+                </div>
+                <div class="footer-col col-lg-4">
+                    <h5>Get Started</h5>
+                    <a class="footer-link" href="register">Sign Up</a>
+                    <a class="footer-link" href="signin">Log In</a>
+                    <a class="footer-link" href="api">API Documentation</a>
+                </div>
+                <div class="footer-col col-lg-4">
+                    <h5>Connect With Us</h5>
+                    <a class="footer-social btn-floating btn-lg btn-fb" href="https://www.facebook.com/CalorieNinjas-106731677893335"><i class="fab fa-facebook-f"></i></a>
+                    <a class="footer-social btn-floating btn-lg btn-tw" href="https://www.twitter.com/calorieninjas"><i class="fab fa-twitter"></i></a>
+                    <a class="footer-social btn-floating btn-lg btn-ins" href="https://www.instagram.com/calorieninjas"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-text">© 2020 CalorieNinjas. All rights reserved.</p>
+            </div>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+    <script src="assets/js/vendor/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script> 
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>

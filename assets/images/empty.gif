@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>Page Not Found - CalorieNinjas</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="CalorieNinjas 404 not found">
+        <meta name="author" content="">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">    
+        <link rel="shortcut icon" href="https://calorieninjas.com/assets/images/favicon.ico">  
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <!-- FontAwesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="https://calorieninjas.com/assets/images/assets/plugins/bootstrap/css/bootstrap.min.css">   
+        <!-- Plugins CSS -->    
+        <link rel="stylesheet" href="https://calorieninjas.com/assets/images/assets/plugins/prism/prism.css">
+        <link rel="stylesheet" href="https://calorieninjas.com/assets/images/assets/plugins/elegant_font/css/style.css">  
+          
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="https://calorieninjas.com/assets/images/assets/css/styles.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149694083-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-149694083-1');
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-custom">
+                    <div class="branding">
+                        <div class="logo">
+                            <a class="navbar-brand" href="../../index.html">
+                                <img src="https://calorieninjas.com/assets/images/images/calorieninjas_logo_small_white.png"/>
+                                <div class="logo-name">CalorieNinjas</div>
+                            </a>
+                        </div>          
+                    </div><!--//branding-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">   
+                            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                        </span>
+                      </button>
+                    <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item nav-button highlight">
+                                <button class="nav-link btn" onclick="location.href = 'api';">API</button>
+                            </li>
+                            <li class="nav-item nav-button highlight">
+                                <button class="nav-link btn" onclick="location.href = 'pricing';">Premium</button>
+                            </li>
+                            <li class="nav-item nav-button highlight">
+                                <button id="login-button" class="nav-link btn">Login</button>
+                            </li>
+                            <li class="nav-item nav-button highlight">
+                                <button id="signup-button" class="nav-link btn">Sign Up</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!--//container-->
+        </header><!--//header-->
+
+        <div class="doc-wrapper">
+            <div class="container">
+                <section class="form-wrap text-center signin">
+                    <div id="doc-header" class="doc-header text-center">
+                        <h1 class="doc-title">Page Not Found</h1>
+                    </div><!--//doc-header--> 
+                    <div>
+                        <p>The page you are looking for cannot be found. Please check the URL and try again. If you believe there is a mistake, please <a href="https://calorieninjas.com/assets/images/contact">contact us</a>.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer text-center">
+            <div>
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <div class="footer-menu row">
+                    <div class="footer-col col-lg-4">
+                        <h5>About</h5>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/pricing">Pricing</a>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/privacy">Privacy Policy</a>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/tos">Terms of Service</a>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/contact">Contact Us</a>
+                    </div>
+                    <div class="footer-col col-lg-4">
+                        <h5>Get Started</h5>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/register">Sign Up</a>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/signin">Log In</a>
+                        <a class="footer-link" href="https://calorieninjas.com/assets/images/api">API Documentation</a>
+                    </div>
+                    <div class="footer-col col-lg-4">
+                        <h5>Connect With Us</h5>
+                        <a class="footer-social btn-floating btn-lg btn-fb" href="https://www.facebook.com/CalorieNinjas-106731677893335"><i class="fab fa-facebook-f"></i></a>
+                        <a class="footer-social btn-floating btn-lg btn-tw" href="https://www.twitter.com/calorieninjas"><i class="fab fa-twitter"></i></a>
+                        <a class="footer-social btn-floating btn-lg btn-ins" href="https://www.instagram.com/calorieninjas"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="footer-text">© 2020 CalorieNinjas. All rights reserved.</p>
+                </div>
+            </div><!--//container-->
+        </footer><!--//footer-->
+
+        <script src="https://calorieninjas.com/assets/images/assets/js/vendor/jquery-3.1.0.js"></script>
+        <script src="https://calorieninjas.com/assets/images/assets/js/vendor/bootstrap.min.js"></script>
+        <script src="https://calorieninjas.com/assets/images/assets/js/vendor/aws-cognito-sdk.min.js"></script>
+        <script src="https://calorieninjas.com/assets/images/assets/js/vendor/amazon-cognito-identity.min.js"></script>
+        <script src="https://calorieninjas.com/assets/images/assets/js/config.js"></script>
+        <script src="https://calorieninjas.com/assets/images/assets/js/cognito-auth.js"></script>
+        <script type="text/javascript" src="https://calorieninjas.com/assets/images/assets/js/main.js"></script>
+    </body>
+</html>
