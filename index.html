@@ -71,11 +71,11 @@
                         <h1 class="main-line">Nutrition Facts and Recipes Now</h1>
                     </div><!--//branding-->
                     <div>
-                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;">Text Food</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;">Menu Food</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;">Calo Burn</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;">Daily Calo</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;">Recipe</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;" onclick="changecolor('textfood')" id="textfood">Text Food</button>
+                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="menufood" onclick="changecolor('menufood')" >Menu Food</button>
+                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="caloburn" onclick="changecolor('caloburn')" >Calo Burn</button>
+                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="dailycalo" onclick="changecolor('dailycalo')" >Daily Calo</button>
+                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="recipe" onclick="changecolor('recipe')" >Recipe</button>
                     </div>
                     <div class="tab-content">
                         <div aria-labelledby="tab-one" class="text-center tab-pane fade show active" role="tabpanel" id="one">
@@ -244,4 +244,13 @@
     
 </body>
 </html> 
+<script>
+    function changecolor(id){
+        arr = ['textfood', 'menufood','caloburn', 'dailycalo','recipe']
+        for(i =0 ; i < arr.length;i++){
+            document.getElementById(arr[i]).style.background  = 'transparent'
+        }
+        document.getElementById(id).style.backgroundColor  = "#17a2b8"
+    }
+</script>
 
