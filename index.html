@@ -251,6 +251,21 @@
             document.getElementById(arr[i]).style.background  = 'transparent'
         }
         document.getElementById(id).style.backgroundColor  = "#17a2b8"
+        if(id == 'textfood'){
+            document.getElementById('submit').innerHTML  = 'Get Nutrition'
+            document.getElementById('demo-input').type  = 'text'
+            document.getElementById('demo-input').defaultValue  = 'Last night we ordered a 14oz prime rib and mashed potatoes.'
+        }
+        else if(id == 'dailycalo'){
+            document.getElementById('submit').innerHTML  = 'Daily Calo'
+            document.getElementById('demo-input').type  = 'text'
+            document.getElementById('demo-input').defaultValue  = 'Input your weight'
+        }
+        else if(id == 'menufood'){
+            document.getElementById('submit').innerHTML  = 'Get Nutrition'   
+            document.getElementById('demo-input').type  = 'file'
+            document.getElementById('demo-input').defaultValue  = 'Input menu food'
+        }
     }
 </script>
 
