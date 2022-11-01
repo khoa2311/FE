@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Garena Calories - Easy, Free Nutrition Facts and Recipe Search</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate nutrition facts from anything with CalorieNinjas's natural language nutrition tool.">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <meta name="description"
+        content="Calculate nutrition facts from anything with CalorieNinjas's natural language nutrition tool.">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
     <!-- FontAwesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
+        integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
+        crossorigin="anonymous"></script>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
@@ -23,100 +29,117 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149694083-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'UA-149694083-1');
+        gtag('config', 'UA-149694083-1');
     </script>
 
-</head> 
+</head>
 
-<body>   
+<body>
     <div class="home-page page-wrapper">
         <div class="landing-page-bg">
             <header class="header" style="background-color:transparent;">
-		        <div class="container">
-		            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-custom">
                         <div class="branding">
                             <div class="logo">
                                 <a class="navbar-brand" href="index.html">
-                                    <img src="images/calorieninjas_logo_small_white.png"/>
+                                    <img src="images/calorieninjas_logo_small_white.png" />
                                     <div class="logo-name">Garena Calories</div>
                                 </a>
-                            </div>          
-                        </div><!--//branding-->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon">   
+                            </div>
+                        </div>
+                        <!--//branding-->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar"
+                            aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
                                 <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
                             </span>
-                          </button>
-		                <div id="header-navbar" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-		                    <ul class="navbar-nav ml-auto">
-		                        <li class="nav-item nav-button highlight">
-		                            <button id="login-button" class="nav-link btn">Login</button>
+                        </button>
+                        <div id="header-navbar"
+                            class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item nav-button highlight">
+                                    <button id="login-button" class="nav-link btn">Login</button>
                                 </li>
                                 <li class="nav-item nav-button highlight">
                                     <button id="signup-button" class="nav-link btn">Sign Up</button>
                                 </li>
-		                    </ul>
-		                </div>
-		            </nav>
-		        </div><!--//container-->
-		    </header><!--//header-->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!--//container-->
+            </header>
+            <!--//header-->
 
             <div class="center text-center">
                 <div class="container landing-page-bg-panel">
                     <div class="branding">
                         <h1 class="main-line">Nutrition Facts and Recipes Now</h1>
-                    </div><!--//branding-->
+                    </div>
+                    <!--//branding-->
                     <div>
-                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;" onclick="changecolor('textfood')" id="textfood">Text Food</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="menufood" onclick="changecolor('menufood')" >Menu Food</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="caloburn" onclick="changecolor('caloburn')" >Calo Burn</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="dailycalo" onclick="changecolor('dailycalo')" >Daily Calo</button>
-                        <button type="button" class="btn btn-outline-info"style="width:155px; color:white;" id="recipe" onclick="changecolor('recipe')" >Recipe</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;"
+                            onclick="changecolor('textfood')" id="textfood">Text Food</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;"
+                            id="menufood" onclick="changecolor('menufood')">Menu Food</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;"
+                            id="caloburn" onclick="changecolor('caloburn')">Calo Burn</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;"
+                            id="dailycalo" onclick="changecolor('dailycalo')">Daily Calo</button>
+                        <button type="button" class="btn btn-outline-info" style="width:155px; color:white;" id="recipe"
+                            onclick="changecolor('recipe')">Recipe</button>
                     </div>
                     <div class="tab-content">
-                        <div aria-labelledby="tab-one" class="text-center tab-pane fade show active" role="tabpanel" id="one">
+                        <div aria-labelledby="tab-one" class="text-center tab-pane fade show active" role="tabpanel"
+                            id="one">
                             <div class="input-group demo-input">
-                              <input type="text" id="demo-input" class="form-control query-input" placeholder="Enter some text to calculate nutrition information." value="Last night we ordered a 14oz prime rib and mashed potatoes.">
+                                <input type="text" id="demo-input" class="form-control query-input"
+                                    placeholder="Enter some text to calculate nutrition information."
+                                    value="Last night we ordered a 14oz prime rib and mashed potatoes.">
                             </div>
                             <div class="demo" id="text-demo" style="display:none;">
                                 <div style="margin:20px;">
                                     <h3>Nutrition Results</h3>
                                 </div>
                                 <table class="table table-striped">
-                                  <thead class="thead-dark">
-                                    <tr>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Serving Size</th>
-                                      <th scope="col">Calories</th>
-                                      <th scope="col">Total Fat</th>
-                                      <th scope="col">Saturated Fat</th>
-                                      <th scope="col">Cholesterol</th>
-                                      <th scope="col">Sodium</th>
-                                      <th scope="col">Carbohydrates</th>
-                                      <th scope="col">Fiber</th>
-                                      <th scope="col">Sugar</th>
-                                      <th scope="col">Protein</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="result">
-                                  </tbody>
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Serving Size</th>
+                                            <th scope="col">Calories</th>
+                                            <th scope="col">Total Fat</th>
+                                            <th scope="col">Saturated Fat</th>
+                                            <th scope="col">Cholesterol</th>
+                                            <th scope="col">Sodium</th>
+                                            <th scope="col">Carbohydrates</th>
+                                            <th scope="col">Fiber</th>
+                                            <th scope="col">Sugar</th>
+                                            <th scope="col">Protein</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result">
+                                    </tbody>
                                 </table>
                             </div>
-                            <button type="button" id="submit" class="btn-lg btn-primary submit-button button-huge"><i id="text-loader" class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
+                            <button type="button" id="submit" class="btn-lg btn-primary submit-button button-huge"><i
+                                    id="text-loader" class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
                         </div>
 
                         <div aria-labelledby="tab-two" class="tab-pane fade" id="two" role="tabpanel">
                             <div>
                                 <div class="image-upload">
                                     <form>
-                                      <div class="custom-file file">
-                                        <input type="file" class="custom-file-input" name="file" id="file" accept="image/png,image/jpeg">
-                                        <label class="custom-file-label image-input" for="file">Upload image containing food text (e.g. recipe, menu)</label>
-                                      </div>
+                                        <div class="custom-file file">
+                                            <input type="file" class="custom-file-input" name="file" id="file"
+                                                accept="image/png,image/jpeg">
+                                            <label class="custom-file-label image-input" for="file">Upload image
+                                                containing food text (e.g. recipe, menu)</label>
+                                        </div>
                                     </form>
                                 </div>
                                 <div id="image-demo-container" class="demo" style="display: none;">
@@ -129,33 +152,37 @@
                                     <div id="image-demo" style="display:none;">
                                         <h3>Nutrition Results</h3>
                                         <table class="table table-striped">
-                                          <thead class="thead-dark">
-                                            <tr>
-                                              <th scope="col">Name</th>
-                                              <th scope="col">Serving Size</th>
-                                              <th scope="col">Calories</th>
-                                              <th scope="col">Total Fat</th>
-                                              <th scope="col">Saturated Fat</th>
-                                              <th scope="col">Cholesterol</th>
-                                              <th scope="col">Sodium</th>
-                                              <th scope="col">Carbohydrates</th>
-                                              <th scope="col">Fiber</th>
-                                              <th scope="col">Sugar</th>
-                                              <th scope="col">Protein</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody id="image-result">
-                                          </tbody>
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Serving Size</th>
+                                                    <th scope="col">Calories</th>
+                                                    <th scope="col">Total Fat</th>
+                                                    <th scope="col">Saturated Fat</th>
+                                                    <th scope="col">Cholesterol</th>
+                                                    <th scope="col">Sodium</th>
+                                                    <th scope="col">Carbohydrates</th>
+                                                    <th scope="col">Fiber</th>
+                                                    <th scope="col">Sugar</th>
+                                                    <th scope="col">Protein</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="image-result">
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <button type="button" id="submit-image" class="btn-lg btn-primary submit-button button-huge"><i id="image-loader" class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
+                                <button type="button" id="submit-image"
+                                    class="btn-lg btn-primary submit-button button-huge"><i id="image-loader"
+                                        class="fa fa-spinner fa-spin"></i>Get Nutrition</button>
                             </div>
                         </div>
 
-                        <div aria-labelledby="tab-three" class="text-center tab-pane fade show" role="tabpanel" id="three">
+                        <div aria-labelledby="tab-three" class="text-center tab-pane fade show" role="tabpanel"
+                            id="three">
                             <div class="input-group demo-input">
-                              <input type="text" id="demo-input-recipe" class="form-control query-input" placeholder="Enter a dish." value="Mushroom risotto">
+                                <input type="text" id="demo-input-recipe" class="form-control query-input"
+                                    placeholder="Enter a dish." value="Mushroom risotto">
                             </div>
                             <div class="demo" id="recipe-demo" style="display:none;">
                                 <div style="margin:20px;">
@@ -164,7 +191,9 @@
                                 <div id="result-recipe">
                                 </div>
                             </div>
-                            <button type="button" id="submit-recipe" class="btn-lg btn-primary submit-button button-huge"><i id="text-loader-recipe" class="fa fa-spinner fa-spin"></i>Get Recipes</button>
+                            <button type="button" id="submit-recipe"
+                                class="btn-lg btn-primary submit-button button-huge"><i id="text-loader-recipe"
+                                    class="fa fa-spinner fa-spin"></i>Get Recipes</button>
                         </div>
                     </div>
                 </div>
@@ -180,7 +209,8 @@
                     <div class="col-lg-6 feature-col">
                         <div class="inner-feature-col">
                             <h2>Nhập bất cứ thứ gì</h2>
-                            <p>Không cần phải điều chỉnh gì. Phần mềm của chúng tôi có thể đọc bất kỳ thông tin gì bạn nhập và trích xuất chính xác thông tin dinh dưỡng.</p>
+                            <p>Không cần phải điều chỉnh gì. Phần mềm của chúng tôi có thể đọc bất kỳ thông tin gì bạn
+                                nhập và trích xuất chính xác thông tin dinh dưỡng.</p>
                         </div>
                     </div>
                 </div>
@@ -188,7 +218,8 @@
                     <div class="col-lg-6 feature-col">
                         <div class="inner-feature-col">
                             <h2>Hoặc tải lên một thực đơn</h2>
-                            <p>Công cụ chữ - hình sẽ tự động phát hiện món ăn và tính toán thông tin dinh dưỡng. Phù hợp với công thức, và thực đơn nhà hàng!</p>
+                            <p>Công cụ chữ - hình sẽ tự động phát hiện món ăn và tính toán thông tin dinh dưỡng. Phù hợp
+                                với công thức, và thực đơn nhà hàng!</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -202,7 +233,8 @@
                     <div class="col-lg-6 feature-col">
                         <div class="inner-feature-col">
                             <h2>Tìm kiếm hơn 100,000 công thức</h2>
-                            <p>Từ ăn nhẹ đến tráng miệng, khai vị cho đến món chính, tìm kiếm công thức cả trong nước lẫn nước ngoài!</p>
+                            <p>Từ ăn nhẹ đến tráng miệng, khai vị cho đến món chính, tìm kiếm công thức cả trong nước
+                                lẫn nước ngoài!</p>
                         </div>
                     </div>
                 </div>
@@ -217,8 +249,9 @@
                 </div>
             </div>
         </section>
-    </div><!--//page-wrapper-->
-    
+    </div>
+    <!--//page-wrapper-->
+
     <footer class="footer text-center">
         <div>
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
@@ -227,45 +260,68 @@
             <div>
                 <p class="footer-text">© 2020 ANTN. Tho - Khoa - Minh.</p>
             </div>
-        </div><!--//container-->
-    </footer><!--//footer-->
-    
-     
-    <!-- Main Javascript -->          
+        </div>
+        <!--//container-->
+    </footer>
+    <!--//footer-->
+
+
+    <!-- Main Javascript -->
 
     <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
-    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
     <script src="assets/js/vendor/aws-cognito-sdk.min.js"></script>
     <script src="assets/js/vendor/amazon-cognito-identity.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/cognito-auth.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-    
+
 </body>
-</html> 
+
+</html>
 <script>
-    function changecolor(id){
-        arr = ['textfood', 'menufood','caloburn', 'dailycalo','recipe']
-        for(i =0 ; i < arr.length;i++){
-            document.getElementById(arr[i]).style.background  = 'transparent'
+    document.getElementById('submit').innerHTML = 'Get Nutrition'
+    document.getElementById('demo-input').type = 'text'
+    document.getElementById('demo-input').defaultValue = 'Tối qua tui ăn salad với gà.'
+    function changecolor(id) {
+        arr = ['textfood', 'menufood', 'caloburn', 'dailycalo', 'recipe']
+        for (i = 0; i < arr.length; i++) {
+            document.getElementById(arr[i]).style.background = 'transparent'
         }
-        document.getElementById(id).style.backgroundColor  = "#17a2b8"
-        if(id == 'textfood'){
-            document.getElementById('submit').innerHTML  = 'Get Nutrition'
-            document.getElementById('demo-input').type  = 'text'
-            document.getElementById('demo-input').defaultValue  = 'Last night we ordered a 14oz prime rib and mashed potatoes.'
+        document.getElementById(id).style.backgroundColor = "#17a2b8"
+        if (id == 'textfood') {
+            document.getElementById('submit').innerHTML = 'Get Nutrition'
+            document.getElementById('demo-input').type = 'text'
+            document.getElementById('demo-input').defaultValue = 'Tối qua tui ăn salad với gà.'
         }
-        else if(id == 'dailycalo'){
-            document.getElementById('submit').innerHTML  = 'Daily Calo'
-            document.getElementById('demo-input').type  = 'text'
-            document.getElementById('demo-input').defaultValue  = 'Input your weight'
+        else if (id == 'dailycalo') {
+            document.getElementById('submit').innerHTML = 'Daily Calo'
+            document.getElementById('demo-input').type = 'text'
+            document.getElementById('demo-input').defaultValue = 'Tui nặng 75kg'
         }
-        else if(id == 'menufood'){
-            document.getElementById('submit').innerHTML  = 'Get Nutrition'   
-            document.getElementById('demo-input').type  = 'file'
-            document.getElementById('demo-input').defaultValue  = 'Input menu food'
+        else if (id == 'menufood') {
+            document.getElementById('submit').innerHTML = 'Get Nutrition'
+            document.getElementById('demo-input').type = 'file'
+            document.getElementById('demo-input').defaultValue = 'Input menu food'
+        }
+        else if (id == 'caloburn') {
+            document.getElementById('submit').innerHTML = 'Get Burned Calo'
+            document.getElementById('demo-input').type = 'text'
+            document.getElementById('demo-input').defaultValue = 'Tui chạy bộ 50 phút'
+        }
+        else if (id == 'recipe') {
+            document.getElementById('submit').innerHTML = 'Get Recipe'
+            document.getElementById('demo-input').type = 'text'
+            document.getElementById('demo-input').defaultValue = 'Tui đang có thịt chó và mắm tôm'
         }
     }
 </script>
 
+<!-- 
+    1. Code login / Signup / Forgot password
+    2. Code Text Food/ Menu Food / Recipe
+    3. Code 2 module còn lại
+    4. Api dịch tiếng Việt Sang Anh
+    5. Error handling
+ -->
